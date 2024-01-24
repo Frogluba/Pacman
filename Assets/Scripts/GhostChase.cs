@@ -11,17 +11,16 @@ public class GhostChase : GhostBehavior
     {
         Node node = other.GetComponent<Node>();
 
-        // Do nothing while the ghost is frightened
+        // nieko nedaryk kai ghostas yra frightened
         if (node != null && enabled && !ghost.frightened.enabled)
         {
             Vector2 direction = Vector2.zero;
             float minDistance = float.MaxValue;
 
-            // Find the available direction that moves closet to pacman
+            // iesko arciausio budo patekti prie acman
             foreach (Vector2 availableDirection in node.availableDirections)
             {
-                // If the distance in this direction is less than the current
-                // min distance then this direction becomes the new closest
+                // Jei atstumas sia kryptimi yra mazesnis uz esama minimalu atstuma ši kryptis tampa nauja artimiausia
                 Vector3 newPosition = transform.position + new Vector3(availableDirection.x, availableDirection.y);
                 float distance = (ghost.target.position - newPosition).sqrMagnitude;
 

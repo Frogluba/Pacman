@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[DefaultExecutionOrder(-10)]
-[RequireComponent(typeof(Movement))]
+
 public class Ghost : MonoBehaviour
 {
     public Movement movement { get; private set; }
@@ -47,7 +46,7 @@ public class Ghost : MonoBehaviour
 
     public void SetPosition(Vector3 position)
     {
-        // Keep the z-position the same since it determines draw depth
+        // Islaiko ta pacia z pad?ti
         position.z = transform.position.z;
         transform.position = position;
     }

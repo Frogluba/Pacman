@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
+
 public class GhostEyes : MonoBehaviour
 {
     public Sprite up;

@@ -1,10 +1,10 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer))]
+
 public class AnimatedSprite : MonoBehaviour
 {
     public Sprite[] sprites = new Sprite[0];
-    public float animationTime = 0.25f;
+    public float animationTime;
     public bool loop = true;
 
     private SpriteRenderer spriteRenderer;

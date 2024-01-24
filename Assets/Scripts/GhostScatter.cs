@@ -11,19 +11,18 @@ public class GhostScatter : GhostBehavior
     {
         Node node = other.GetComponent<Node>();
 
-        // Do nothing while the ghost is frightened
+        // nieko nedaryk kai ghostas yra frightened
         if (node != null && enabled && !ghost.frightened.enabled)
         {
-            // Pick a random available direction
+            // pasirink random direction
             int index = Random.Range(0, node.availableDirections.Count);
 
-            // Prefer not to go back the same direction so increment the index to
-            // the next available direction
+            // kad negrizti is tos kripties is kurios atejo padidina indeksa iki kitos galimos krypties
             if (node.availableDirections.Count > 1 && node.availableDirections[index] == -ghost.movement.direction)
             {
                 index++;
 
-                // Wrap the index back around if overflowed
+                // Jei indeksas perpildytas graziname atgal
                 if (index >= node.availableDirections.Count) {
                     index = 0;
                 }

@@ -1,13 +1,13 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Movement))]
+
 public class Pacman : MonoBehaviour
 {
-    [SerializeField]
-    private AnimatedSprite deathSequence;
-    private SpriteRenderer spriteRenderer;
-    private Movement movement;
-    private new Collider2D collider;
+    
+    public AnimatedSprite deathSequence;
+    public SpriteRenderer spriteRenderer;
+    public Movement movement;
+    public new Collider2D collider;
 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class Pacman : MonoBehaviour
 
     private void Update()
     {
-        // Set the new direction based on the current input
+        
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
             movement.SetDirection(Vector2.up);
         }
@@ -32,7 +32,7 @@ public class Pacman : MonoBehaviour
             movement.SetDirection(Vector2.right);
         }
 
-        // Rotate pacman to face the movement direction
+        // apsuka sprite pagal jo  direction
         float angle = Mathf.Atan2(movement.direction.y, movement.direction.x);
         transform.rotation = Quaternion.AngleAxis(angle * Mathf.Rad2Deg, Vector3.forward);
     }
